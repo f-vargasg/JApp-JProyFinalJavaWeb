@@ -1,5 +1,7 @@
 package com.fvgprinc.ctrlconsodont.logica;
 
+import java.util.Date;
+
 /**
  *
  * @author garfi
@@ -46,12 +48,24 @@ public class Secretario extends Persona {
         this.sector = sector;
     }
 
+    private Usuario unUsuario;
+
+    public Usuario getUnUsuario() {
+        return unUsuario;
+    }
+
+    public void setUnUsuario(Usuario unUsuario) {
+        this.unUsuario = unUsuario;
+    }
+
     public Secretario() {
     }
 
-    public Secretario(int idSecretario, String sector) {
+    public Secretario(int idSecretario, String sector, Usuario unUsuario, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+        super(dni, nombre, apellido, telefono, fecNacimiento);
         this.idSecretario = idSecretario;
         this.sector = sector;
+        this.unUsuario = unUsuario;
     }
 
 }

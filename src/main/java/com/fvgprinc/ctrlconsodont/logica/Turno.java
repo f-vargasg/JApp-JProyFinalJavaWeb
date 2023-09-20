@@ -1,13 +1,101 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.fvgprinc.ctrlconsodont.logica;
+
+import java.util.Date;
 
 /**
  *
  * @author garfi
  */
 public class Turno {
-    
+
+    private int idTurno;
+
+    /**
+     * Get the value of idTurno
+     *
+     * @return the value of idTurno
+     */
+    public int getIdTurno() {
+        return idTurno;
+    }
+
+    /**
+     * Set the value of idTurno
+     *
+     * @param idTurno new value of idTurno
+     */
+    public void setIdTurno(int idTurno) {
+        this.idTurno = idTurno;
+    }
+
+    private Date fechaTurno;
+
+    /**
+     * Get the value of fechaTurno
+     *
+     * @return the value of fechaTurno
+     */
+    public Date getFechaTurno() {
+        return fechaTurno;
+    }
+
+    /**
+     * Set the value of fechaTurno
+     *
+     * @param fechaTurno new value of fechaTurno
+     */
+    public void setFechaTurno(Date fechaTurno) {
+        this.fechaTurno = fechaTurno;
+    }
+
+    private String horaTurno;
+
+    /**
+     * Get the value of horaTurno
+     *
+     * @return the value of horaTurno
+     */
+    public String getHoraTurno() {
+        return horaTurno;
+    }
+
+    /**
+     * Set the value of horaTurno
+     *
+     * @param horaTurno new value of horaTurno
+     */
+    public void setHoraTurno(String horaTurno) {
+        this.horaTurno = horaTurno;
+    }
+
+    private String afeccion;
+
+    /**
+     * Get the value of afeccion
+     *
+     * @return the value of afeccion
+     */
+    public String getAfeccion() {
+        return afeccion;
+    }
+
+    /**
+     * Set the value of afeccion
+     *
+     * @param afeccion new value of afeccion
+     */
+    public void setAfeccion(String afeccion) {
+        this.afeccion = afeccion;
+    }
+
+    public Turno() {
+    }
+
+    public Turno(int idTurno, Date fechaTurno, String horaTurno, String afeccion) {
+        this.idTurno = idTurno;
+        this.fechaTurno = fechaTurno;
+        this.horaTurno = horaTurno;
+        this.afeccion = afeccion;
+    }
+
 }

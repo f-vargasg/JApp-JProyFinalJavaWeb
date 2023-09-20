@@ -94,7 +94,7 @@ public class Paciente extends Persona {
         this.listaTurnos = listaTurnos;
     }
     
-    
+     
     
     public Paciente() {
     }
