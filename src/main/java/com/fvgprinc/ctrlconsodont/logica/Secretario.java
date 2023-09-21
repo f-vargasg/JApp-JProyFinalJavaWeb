@@ -2,34 +2,14 @@ package com.fvgprinc.ctrlconsodont.logica;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author garfi
  */
-
 @Entity
 public class Secretario extends Persona {
-
-//    private int idSecretario;
-
-    /**
-     * Get the value of idSecretario
-     *
-     * @return the value of idSecretario
-     */
-//    public int getIdSecretario() {
-//        return idSecretario;
-//    }
-
-    /**
-     * Set the value of idSecretario
-     *
-     * @param idSecretario new value of idSecretario
-     */
-//    public void setIdSecretario(int idSecretario) {
-//        this.idSecretario = idSecretario;
-//    }
 
     private String sector;
 
@@ -51,6 +31,7 @@ public class Secretario extends Persona {
         this.sector = sector;
     }
 
+    @OneToOne
     private Usuario unUsuario;
 
     public Usuario getUnUsuario() {
@@ -64,12 +45,10 @@ public class Secretario extends Persona {
     public Secretario() {
     }
 
-    public Secretario(String sector, Usuario unUsuario, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
-        super(dni, nombre, apellido, telefono, fecNacimiento);
+    public Secretario(String sector, Usuario unUsuario, int id, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+        super(id, dni, nombre, apellido, telefono, fecNacimiento);
         this.sector = sector;
         this.unUsuario = unUsuario;
     }
-
-    
 
 }

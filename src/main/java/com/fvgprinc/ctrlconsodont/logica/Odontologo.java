@@ -1,12 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.fvgprinc.ctrlconsodont.logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -14,27 +14,7 @@ import javax.persistence.Entity;
  */
 
 @Entity
-public class Odontologo extends Persona {
-
-    // private int idOdontologo;
-
-    /**
-     * Get the value of idOdontologo
-     *
-     * @return the value of idOdontologo
-     */
-    /*public int getIdOdontologo() {
-        return idOdontologo;
-    } */
-
-    /**
-     * Set the value of idOdontologo
-     *
-     * @param idOdontologo new value of idOdontologo
-     */
-    /*public void setIdOdontologo(int idOdontologo) {
-        this.idOdontologo = idOdontologo;
-    } */
+public class Odontologo extends Persona implements Serializable {
 
     private String especialidad;
 
@@ -56,6 +36,8 @@ public class Odontologo extends Persona {
         this.especialidad = especialidad;
     }
 
+    
+    @OneToMany(mappedBy = "odonto")
     private List<Turno> listaTurnos;
 
     public List<Turno> getListaTurnos() {
@@ -66,6 +48,7 @@ public class Odontologo extends Persona {
         this.listaTurnos = listaTurnos;
     }
 
+    @OneToOne
     private Usuario unUsuario;
 
     /**
@@ -86,6 +69,7 @@ public class Odontologo extends Persona {
         this.unUsuario = unUsuario;
     }
 
+    @OneToOne
     private Horario unHorario;
 
     /**
@@ -109,13 +93,15 @@ public class Odontologo extends Persona {
     public Odontologo() {
     }
 
-    public Odontologo(String especialidad, List<Turno> listaTurnos, Usuario unUsuario, Horario unHorario, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
-        super(dni, nombre, apellido, telefono, fecNacimiento);
+    public Odontologo(String especialidad, List<Turno> listaTurnos, Usuario unUsuario, Horario unHorario, int id, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+        super(id, dni, nombre, apellido, telefono, fecNacimiento);
         this.especialidad = especialidad;
         this.listaTurnos = listaTurnos;
         this.unUsuario = unUsuario;
         this.unHorario = unHorario;
     }
+
+    
 
     
 

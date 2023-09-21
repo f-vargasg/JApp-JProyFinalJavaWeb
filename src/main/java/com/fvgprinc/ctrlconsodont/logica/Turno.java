@@ -1,13 +1,27 @@
 package com.fvgprinc.ctrlconsodont.logica;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author garfi
  */
-public class Turno {
 
+
+@Entity
+public class Turno implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTurno;
 
     /**
@@ -28,6 +42,8 @@ public class Turno {
         this.idTurno = idTurno;
     }
 
+    
+    @Temporal(TemporalType.DATE)
     private Date fechaTurno;
 
     /**
@@ -87,6 +103,15 @@ public class Turno {
     public void setAfeccion(String afeccion) {
         this.afeccion = afeccion;
     }
+    
+    @ManyToOne
+    @JoinColumn(name="id_turno")
+    private Odontologo odonto;
+    
+    
+    @ManyToOne
+    @JoinColumn(name="id_turno2")
+    private Paciente pacien;
 
     public Turno() {
     }

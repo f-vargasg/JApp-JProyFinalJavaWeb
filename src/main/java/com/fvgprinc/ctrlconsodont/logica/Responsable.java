@@ -11,23 +11,7 @@ import javax.persistence.Entity;
 @Entity
 public class Responsable extends Persona {
 
-//    private int idResponsable;
-    /**
-     * Get the value of idResponsable
-     *
-     * @return the value of idResponsable
-     */
-//    public int getIdResponsable() {
-//        return idResponsable;
-//    }
-    /**
-     * Set the value of idResponsable
-     *
-     * @param idResponsable new value of idResponsable
-     */
-//    public void setIdResponsable(int idResponsable) {
-//        this.idResponsable = idResponsable;
-//    }
+
     private String tipoResp;
 
     /**
@@ -51,9 +35,11 @@ public class Responsable extends Persona {
     public Responsable() {
     }
 
-    public Responsable(String tipoResp, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
-        super(dni, nombre, apellido, telefono, fecNacimiento);
+    public Responsable(String tipoResp, int id, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+        super(id, dni, nombre, apellido, telefono, fecNacimiento);
         this.tipoResp = tipoResp;
     }
+
+    
 
 }

@@ -1,5 +1,6 @@
 package com.fvgprinc.ctrlconsodont.logica;
 
+import java.io.Serializable;
 import java.util.Date;
 import javax.annotation.Generated;
 import javax.persistence.Entity;
@@ -17,7 +18,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Persona {
+public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -136,12 +137,16 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+    public Persona(int id, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+        this.id = id;
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.fecNacimiento = fecNacimiento;
     }
+
+    
+
 
 }
