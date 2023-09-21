@@ -6,32 +6,35 @@ package com.fvgprinc.ctrlconsodont.logica;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
 
 /**
  *
  * @author garfi
  */
+
+@Entity
 public class Odontologo extends Persona {
 
-    private int idOdontologo;
+    // private int idOdontologo;
 
     /**
      * Get the value of idOdontologo
      *
      * @return the value of idOdontologo
      */
-    public int getIdOdontologo() {
+    /*public int getIdOdontologo() {
         return idOdontologo;
-    }
+    } */
 
     /**
      * Set the value of idOdontologo
      *
      * @param idOdontologo new value of idOdontologo
      */
-    public void setIdOdontologo(int idOdontologo) {
+    /*public void setIdOdontologo(int idOdontologo) {
         this.idOdontologo = idOdontologo;
-    }
+    } */
 
     private String especialidad;
 
@@ -106,9 +109,8 @@ public class Odontologo extends Persona {
     public Odontologo() {
     }
 
-    public Odontologo(int idOdontologo, String especialidad, List<Turno> listaTurnos, Usuario unUsuario, Horario unHorario, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+    public Odontologo(String especialidad, List<Turno> listaTurnos, Usuario unUsuario, Horario unHorario, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
         super(dni, nombre, apellido, telefono, fecNacimiento);
-        this.idOdontologo = idOdontologo;
         this.especialidad = especialidad;
         this.listaTurnos = listaTurnos;
         this.unUsuario = unUsuario;

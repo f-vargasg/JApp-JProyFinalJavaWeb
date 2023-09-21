@@ -6,32 +6,35 @@ package com.fvgprinc.ctrlconsodont.logica;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
 
 /**
  *
  * @author garfi
  */
+
+@Entity
 public class Paciente extends Persona {
     
-    private int idPaciente;
+    // private int idPaciente;
 
     /**
      * Get the value of idPaciente
      *
      * @return the value of idPaciente
      */
-    public int getIdPaciente() {
-        return idPaciente;
-    }
+//    public int getIdPaciente() {
+//        return idPaciente;
+//    }
 
     /**
      * Set the value of idPaciente
      *
      * @param idPaciente new value of idPaciente
      */
-    public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
-    }
+//    public void setIdPaciente(int idPaciente) {
+//        this.idPaciente = idPaciente;
+//    }
     
         private boolean tieneOs;
 
@@ -99,14 +102,15 @@ public class Paciente extends Persona {
     public Paciente() {
     }
 
-    public Paciente(int idPaciente, boolean tieneOs, String tipoSangre, Responsable unResponsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+    public Paciente(boolean tieneOs, String tipoSangre, Responsable unResponsable, List<Turno> listaTurnos, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
         super(dni, nombre, apellido, telefono, fecNacimiento);
-        this.idPaciente = idPaciente;
         this.tieneOs = tieneOs;
         this.tipoSangre = tipoSangre;
         this.unResponsable = unResponsable;
         this.listaTurnos = listaTurnos;
     }
+
+    
     
     
     

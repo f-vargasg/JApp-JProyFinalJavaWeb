@@ -1,33 +1,33 @@
 package com.fvgprinc.ctrlconsodont.logica;
 
 import java.util.Date;
+import javax.persistence.Entity;
 
 /**
  *
  * @author garfi
  */
+
+@Entity
 public class Responsable extends Persona {
 
-    private int idResponsable;
-
+//    private int idResponsable;
     /**
      * Get the value of idResponsable
      *
      * @return the value of idResponsable
      */
-    public int getIdResponsable() {
-        return idResponsable;
-    }
-
+//    public int getIdResponsable() {
+//        return idResponsable;
+//    }
     /**
      * Set the value of idResponsable
      *
      * @param idResponsable new value of idResponsable
      */
-    public void setIdResponsable(int idResponsable) {
-        this.idResponsable = idResponsable;
-    }
-
+//    public void setIdResponsable(int idResponsable) {
+//        this.idResponsable = idResponsable;
+//    }
     private String tipoResp;
 
     /**
@@ -51,9 +51,8 @@ public class Responsable extends Persona {
     public Responsable() {
     }
 
-    public Responsable(int idResponsable, String tipoResp, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
+    public Responsable(String tipoResp, String dni, String nombre, String apellido, String telefono, Date fecNacimiento) {
         super(dni, nombre, apellido, telefono, fecNacimiento);
-        this.idResponsable = idResponsable;
         this.tipoResp = tipoResp;
     }
 
