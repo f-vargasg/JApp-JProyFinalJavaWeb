@@ -2,6 +2,7 @@
 package com.fvgprinc.ctrlconsodont.logica;
 
 import com.fvgprinc.ctrlconsodont.persistencia.ControladoraPersistencia;
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,5 +36,22 @@ public class Controladora {
 
     public void editarUsuario(Usuario usu) {
         controlPersis.editarUsuario(usu);
+    }
+
+    public boolean comprobarIngreso(String usuario, String contrasenia) {
+       List<Usuario> listaUsuarios = new ArrayList<>();
+       boolean ingresoValido = false;
+       
+       listaUsuarios = controlPersis.getUsuarios();
+       
+        for (Usuario usu : listaUsuarios) {
+            if (usu.getNombreUsuario().equals(usuario)) {
+                if (usu.getContrasenia().equals(contrasenia)) {
+                    ingresoValido = true;
+                }
+            }
+            
+        }
+              return ingresoValido;
     }
 }
